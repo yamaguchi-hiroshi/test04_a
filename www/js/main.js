@@ -141,8 +141,9 @@ var BB = {
         BB.paddle.position.y = BB.renderer.height - 60;
         
 //        BB.paddle.width = 60;
-        BB.paddle.width = 307;
-        BB.paddle.height = 10;
+        BB.paddle.width = 430;
+//        BB.paddle.height = 10;
+        BB.paddle.height = 25;
         
         BB.paddle.accel = 0;
         BB.paddle.delta = {
@@ -389,7 +390,7 @@ function animate() {
                 if(BB.isBallHit(ball, block)) {
                     BB.addScore(block.point);
                     ball.delta.y *= -1;
-                    if ((ball.position.x < 4 + block.position.x - (block.width * 0.5)) || (ball.position.x > -4 + block.position.x + (block.width * 0.5))) {
+                    if ((ball.position.x < 4 + block.position.x - (block.width * 0.7)) || (ball.position.x > -4 + block.position.x + (block.width * 0.7))) {
                         ball.delta.x *= -1; //ball hits side of the block
                     }
                     BB.stage.removeChild(block);
